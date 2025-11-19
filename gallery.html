@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <h1 class="gallery-title">Gallery</h1>
+
+  <!-- Genre buttons -->
+  <div class="genre-tabs">
+    <button class="tab-btn active" data-tab="portraits">Portraits</button>
+    <button class="tab-btn" data-tab="travel">Travel</button>
+    <button class="tab-btn" data-tab="urban">Urban</button>
+  </div>
+
+  <!-- Carousels -->
+  <div id="portraits" class="carousel active">
+    <img src="images/portraits/p1.jpg" alt="">
+    <img src="images/portraits/p2.jpg" alt="">
+    <img src="images/portraits/p3.jpg" alt="">
+  </div>
+
+  <div id="travel" class="carousel">
+    <img src="images/travel/t1.jpg" alt="">
+    <img src="images/travel/t2.jpg" alt="">
+    <img src="images/travel/t3.jpg" alt="">
+  </div>
+
+  <div id="urban" class="carousel">
+    <img src="images/urban/u1.jpg" alt="">
+    <img src="images/urban/u2.jpg" alt="">
+    <img src="images/urban/u3.jpg" alt="">
+  </div>
+
+</main>
+
+<script src="js/gallery.js"></script>
+
+</body>
+</html>
