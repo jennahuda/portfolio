@@ -26,6 +26,16 @@ body {
   .about-container h1 {
     margin-bottom: 20px;
   }
+
+  .index-container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 20px;
+  }
+  
+  .index-container h1 {
+    margin-bottom: 20px;
+  }
   .gallery-title {
     text-align: center;
     margin-top: 40px;
