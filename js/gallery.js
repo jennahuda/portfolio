@@ -15,26 +15,36 @@ buttons.forEach(btn => {
     });
   });
 });
+  
 
-
-const galleries = {
+  const galleries = {
     portraits: ["images/portraits/p1.jpg", "images/portraits/p2.jpg"],
     travel: ["images/travel/t1.jpg", "images/travel/t2.jpg"],
-    wildlife: ["images/wildlife/w1.jpg", "images/wildlife/w2.jpg"]
+    urban: ["images/wildlife/w1.jpg", "images/wildlife/w2.jpg"]
   };
   
   let currentGenre = "portraits";
   let currentIndex = 0;
+  let autoplayInterval = null;
   
   function showGenre(genre) {
     currentGenre = genre;
     currentIndex = 0;
     updateCarousel();
+    startAutoplay(); // Restart autoplay on genre change
   }
   
   function updateCarousel() {
     const carousel = document.getElementById("carousel");
-    carousel.innerHTML = `<img src="${galleries[currentGenre][currentIndex]}" alt="">`;
+    carousel.innerHTML = '';
+  
+    galleries[currentGenre].forEach((imgSrc, index) => {
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.alt = "";
+      if (index === currentIndex) img.classList.add('active');
+      carousel.appendChild(img);
+    });
   }
   
   function nextImage() {
@@ -49,6 +59,11 @@ const galleries = {
     updateCarousel();
   }
   
+  function startAutoplay() {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(nextImage, 5000); // Change image every 5 seconds
+  }
+  
   // Initialize carousel
   updateCarousel();
-  
+  startAutoplay();
